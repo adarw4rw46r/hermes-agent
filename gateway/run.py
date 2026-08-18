@@ -21010,6 +21010,21 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
             logger.debug("goal manager unavailable: %s", exc)
             return None, None
         try:
+            # Warm the SessionDB cache off-loop before constructing the
+            # manager: a cold cache would run the state.db init on the
+            # loop thread behind the bootstrap windows — a loop freeze for
+            # the init duration, and a silently dropped first write when
+            # the init is slow (the /goal reply would claim the goal was
+            # set). Same shape as _bounded_history_media_paths_for_session.
+            # The context-preserving executor hop keeps the profile home
+            # override alive under multiplex (a bare to_thread would
+            # resolve the default profile's home on the worker thread).
+            from hermes_cli.goals import _get_session_db as _warm_goals_db
+
+            await self._run_in_executor_with_context(_warm_goals_db)
+        except Exception as exc:
+            logger.debug("goal manager: session DB warm-up failed: %s", exc)
+        try:
             # Session lookups on behalf of an internal event must not advance
             # the user-activity clock that drives idle/daily reset policy
             # (same class as the wake fix in _handle_message_with_agent).
@@ -21036,6 +21051,15 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
         except Exception as exc:
             logger.debug("heartbeat manager unavailable: %s", exc)
             return None, None
+        try:
+            # Same warm-up as _get_goal_manager_for_event: a cold cache
+            # would run the state.db init on the loop thread and can drop
+            # the first /heartbeat write while the reply claims it was set.
+            from hermes_cli.goals import _get_session_db as _warm_goals_db
+
+            await self._run_in_executor_with_context(_warm_goals_db)
+        except Exception as exc:
+            logger.debug("heartbeat manager: session DB warm-up failed: %s", exc)
         try:
             # Same reset-policy contract as _get_goal_manager_for_event:
             # internal events look up the session without touching activity.
@@ -21216,6 +21240,19 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
             return
 
         max_turns = self._goal_max_turns_from_config()
+
+        # Warm the SessionDB cache off-loop before constructing the
+        # manager: a cold cache would run the state.db init on the loop
+        # thread at the turn boundary (the 2026-08-14 crash-loop seam),
+        # and a slow init could drop the goal read, silently ending the
+        # goal loop. Same context-preserving executor pattern as the
+        # /goal command path.
+        try:
+            from hermes_cli.goals import _get_session_db as _warm_goals_db
+
+            await self._run_in_executor_with_context(_warm_goals_db)
+        except Exception as exc:
+            logger.debug("goal continuation: session DB warm-up failed: %s", exc)
 
         mgr = GoalManager(session_id=sid, default_max_turns=max_turns)
         if not mgr.is_active():
