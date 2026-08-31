@@ -25,7 +25,7 @@ NARRATION: The man who sold them this country was a Scottish soldier named Grego
 VISUAL: Illustrated portrait of a nineteenth century officer in a dress uniform, painted in confident heroic style, faint canvas texture.
 
 Block 7
-NARRATION: He had already sold that same imaginary country to the London bond market, twice, for two hundred thousand pounds each time.
+NARRATION: He had already sold that same imaginary country to the London bond market, and would sell it there again the following year.
 VISUAL: Crowded illustrated trading floor interior, top hats and ledgers, papers changing hands under high arched windows.
 
 Block 8

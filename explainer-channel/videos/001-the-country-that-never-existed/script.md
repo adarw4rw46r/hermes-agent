@@ -6,7 +6,7 @@ In eighteen twenty-three, a ship dropped anchor off Honduras and put nearly two 
 
 There was no harbour. No capital city. No government building, no theatre, no roads. Only a river mouth, and jungle, and silence. Somewhere in their luggage was a guidebook describing the very streets they were standing on. Every word of it had been invented. [loop planted: what was in the guidebook — closed blk 45]
 
-Within months more than one hundred and fifty of them were dead, and fewer than fifty of them ever saw Britain again. The man who sold them this country was a Scottish soldier named Gregor MacGregor, and he was not finished yet. He had already sold that same imaginary country to the London bond market, twice, for two hundred thousand pounds each time. [loop planted: how a bond market buys a fake country — closed ch4]
+Within months more than one hundred and fifty of them were dead, and fewer than fifty of them ever saw Britain again. The man who sold them this country was a Scottish soldier named Gregor MacGregor, and he was not finished yet. He had already sold that same imaginary country to the London bond market, and would sell it there again the following year. [loop planted: how a bond market buys a fake country — closed ch4]
 
 What makes this story matter is not that he lied. It is how many clever people needed him to be telling the truth. [loop planted: who needed it — closed blks 52–55] Bankers checked his paperwork. Investors compared his terms. Families sold everything they owned. The system worked exactly as designed. To understand how a country gets invented, you have to start with a war that nobody in London had actually watched. [doorway → ch2]
 
