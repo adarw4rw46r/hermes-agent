@@ -19,7 +19,8 @@ Two rules that make this work:
 **Let the retention graph write the next script.** Watch average view duration on each upload. Where viewers drop is the note for the next script — that spot is an open loop that didn't hold, or a chapter that summarised instead of opening a door. Fix that specific thing in the next video rather than changing everything.
 
 ## Monetization path (researched 2026-08-31)
-- Standard YPP: 1,000 subscribers + 4,000 public watch hours in 12 months.
-- Early-access tier: 500 subscribers + 3 public videos + 3,000 watch hours (or 3m Shorts views) in 90 days — unlocks Super Thanks, memberships, Shopping.
+- Full ad revenue: 1,000 subscribers + either 4,000 valid public watch hours in the last 12 months or 10 million public Shorts views in 90 days.
+- Early access (fan funding): 500 subscribers + 3 valid public uploads in the last 90 days + either 3,000 valid public watch hours in the last **12 months** or 3 million public Shorts views in 90 days — unlocks Super Thanks, memberships, Shopping.
+- Watch hours and Shorts views never mix: Shorts feed views do not count toward the watch-hour thresholds, and long-form hours do not count toward Shorts view thresholds. All tiers also need 2-step verification, a linked AdSense account, and no active strikes.
 - Eight ten-minute videos = 80 minutes of watch time per full viewer. The daily shorts exist to feed subscribers into the long-form, which is where the watch hours actually come from.
 - Policy note: YouTube demonetizes *inauthentic* mass-produced content, not AI-assisted content. Sourced, specific, narratively original videos stay eligible. Every video in this plan is built from a cited research file for exactly that reason.
