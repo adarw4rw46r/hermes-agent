@@ -1,0 +1,40 @@
+# Nous-approved MCP catalog entry.
+# Presence in this directory = approval. Merged via PR review.
+manifest_version: 1
+
+name: short-video-maker
+description: >-
+  Render short-form videos (TikTok / Reels / Shorts) from a script — stock
+  footage, TTS narration, and captions — via a locally running server.
+source: https://github.com/gyoridavid/short-video-maker
+
+# URL-only, like the hosted remote entries, but the server is the user's own:
+# short-video-maker exposes MCP over SSE from a process they run themselves
+# (Docker or `npx short-video-maker`), so Hermes connects to localhost rather
+# than spawning it. Rendering needs ffmpeg, Whisper, and Remotion — far too
+# heavy to bootstrap from a manifest, and the same reason the n8n entry
+# expects an already-running instance.
+transport:
+  type: http
+  url: http://127.0.0.1:3123/mcp/sse
+
+# The local server holds the Pexels key itself (PEXELS_API_KEY in its own
+# environment); Hermes sends no credentials over the loopback connection.
+auth:
+  type: none
+
+post_install: |
+  Start the server before using these tools — Hermes only connects to it:
+
+    docker run -it --rm --name short-video-maker -p 3123:3123 \
+      -e PEXELS_API_KEY=<your-key> gyoridavid/short-video-maker:latest-tiny
+
+  It needs a free Pexels API key (pexels.com/api), and roughly 3GB RAM,
+  2 vCPU, and 5GB disk. The npm path (`npx short-video-maker`) additionally
+  wants ffmpeg, cmake, and build tooling — Docker is the supported route.
+
+  Change the port in your config if you run the server somewhere other than
+  127.0.0.1:3123. Rendering a video takes minutes, and each run pulls stock
+  footage against your Pexels quota.
+
+  Start a new Hermes session to load the tools.
