@@ -1,0 +1,40 @@
+# Nous-approved MCP catalog entry.
+# Presence in this directory = approval. Merged via PR review.
+manifest_version: 1
+
+name: playwright
+description: >-
+  Drive a real browser — navigate, click, fill forms, and read page snapshots
+  — via Microsoft's Playwright MCP.
+source: https://github.com/microsoft/playwright-mcp
+
+# Runs locally over stdio: the server launches a browser on the user's own
+# machine, so there is nothing hosted to connect to and no credentials.
+transport:
+  type: stdio
+  command: npx
+  args:
+    # Pinned per catalog dependency policy: exact version, never a dist-tag.
+    # 0.0.79 published 2026-08-06. Bumping the pin is a PR to this manifest.
+    - "-y"
+    - "@playwright/mcp@0.0.79"
+
+auth:
+  type: none
+
+# Composer-suggestion triggers (desktop brand pills).
+suggest:
+  keywords:
+    - playwright
+    - browser automation
+
+post_install: |
+  Requires Node (npx) on PATH. On first run Playwright downloads its browser
+  binaries (a few hundred MB); if the machine already has them, point the
+  server at that install with PLAYWRIGHT_BROWSERS_PATH.
+
+  The browser it drives is a real one on this machine: pages it visits can
+  reach anything the machine can, and it acts on sites with whatever the
+  browser profile is logged into. Treat navigation targets as untrusted input.
+
+  Start a new Hermes session to load the browser tools.
