@@ -1,0 +1,44 @@
+# Nous-approved MCP catalog entry.
+# Presence in this directory = approval. Merged via PR review.
+manifest_version: 1
+
+name: perplexity
+description: >-
+  Live web search, research, and reasoning through the Perplexity Sonar API.
+source: https://github.com/ppl-ai/modelcontextprotocol
+
+# Perplexity ships no hosted remote MCP: the official server is the
+# `server-perplexity-ask` npm package, run locally over stdio, which calls
+# the Sonar chat-completions API with the user's own key.
+transport:
+  type: stdio
+  command: npx
+  args:
+    # Pinned per catalog dependency policy: exact version, never a dist-tag.
+    # 0.1.3 published 2025-04-02. Bumping the pin is a PR to this manifest.
+    - "-y"
+    - "server-perplexity-ask@0.1.3"
+
+auth:
+  type: api_key
+  env:
+    - name: PERPLEXITY_API_KEY
+      prompt: "Perplexity API key (create at perplexity.ai/account/api/keys)"
+      required: true
+      secret: true
+
+# Composer-suggestion triggers (desktop brand pills).
+suggest:
+  keywords:
+    - perplexity
+    - sonar
+  hosts:
+    - perplexity.ai
+
+post_install: |
+  Sonar API calls are billed to your Perplexity account per request — the
+  research and reasoning tools are the expensive ones. Generate a key under
+  Settings → API in your Perplexity account; an API key is separate from a
+  Pro subscription and needs its own credit.
+
+  Requires Node (npx) on PATH. Start a new Hermes session to load the tools.
