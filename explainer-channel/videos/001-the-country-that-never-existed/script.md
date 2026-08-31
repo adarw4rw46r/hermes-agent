@@ -2,7 +2,7 @@
 Target: 10:00 · 60 blocks · 6 chapters · 9 open loops
 
 ## Chapter 1 — What did two hundred people find when they landed?  [blocks 1–10]
-In eighteen twenty-three, a ship dropped anchor off Honduras and put two hundred settlers ashore in a country that did not exist. They carried printed banknotes they had bought with real British savings. The money was worthless. So was the land. So was the king.
+In eighteen twenty-three, a ship dropped anchor off Honduras and put nearly two hundred settlers ashore in a country that did not exist. They carried printed banknotes they had bought with real British savings. The money was worthless. So was the land. So was the king.
 
 There was no harbour. No capital city. No government building, no theatre, no roads. Only a river mouth, and jungle, and silence. Somewhere in their luggage was a guidebook describing the very streets they were standing on. Every word of it had been invented. [loop planted: what was in the guidebook — closed blk 45]
 
@@ -55,6 +55,6 @@ Fewer than fifty returned to Britain in late eighteen twenty-three, and told the
 
 They insisted the general had been let down by the men he had put in charge of the emigration party. People who had buried their families in that jungle argued that the man who sold them the jungle was innocent. That is not stupidity. That is the cost of admitting you were fooled, which is often higher than the cost of staying fooled. [loop closed: how many clever people needed him to be telling the truth]
 
-MacGregor moved to France and started again. In eighteen twenty-six a French court tried him and three others for fraud. Only one associate was convicted. MacGregor walked. He went on claiming the title Cazique of Poyais for another fourteen years. He died in Caracas in eighteen forty-five, in the republic he had genuinely helped to free, a general to the end.
+MacGregor moved to France and started again. In eighteen twenty-six a French court tried him and three others for fraud. Only one associate was convicted. MacGregor walked. He went on claiming the title Cazique of Poyais until eighteen thirty-seven, eleven years later. He died in Caracas in eighteen forty-five, in the republic he had genuinely helped to free, a general to the end.
 
 Two years after that second bond issue, London's lending boom broke. In the panic of eighteen twenty-five, more than seventy banks failed within weeks. [loop closed: the mechanism] Poyais was never the strangest thing in that market. Only the clearest. Next time: the crash that took those seventy banks with it.

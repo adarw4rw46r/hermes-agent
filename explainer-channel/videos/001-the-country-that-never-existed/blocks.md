@@ -1,7 +1,7 @@
 # Blocks — 60 × 10s = 10:00 · style: 2D Illustrator · 16:9 · no on-screen text · never photoreal
 
 Block 1
-NARRATION: In eighteen twenty-three, a ship dropped anchor off Honduras and put two hundred settlers ashore in a country that did not exist.
+NARRATION: In eighteen twenty-three, a ship dropped anchor off Honduras and put nearly two hundred settlers ashore in a country that did not exist.
 VISUAL: Wide illustrated seascape, a wooden sailing ship anchored off an empty tropical coastline, small rowboats crawling toward a bare shore.
 
 Block 2
@@ -225,7 +225,7 @@ NARRATION: MacGregor moved to France and started again. In eighteen twenty-six a
 VISUAL: A French courtroom interior in cool illustration, four figures in the dock, robed judges above them.
 
 Block 57
-NARRATION: Only one associate was convicted. MacGregor walked. He went on claiming the title Cazique of Poyais for another fourteen years.
+NARRATION: Only one associate was convicted. MacGregor walked. He went on claiming the title Cazique of Poyais until eighteen thirty-seven, eleven years later.
 VISUAL: A figure walking out through tall courtroom doors into daylight, the crowd parting.
 
 Block 58
